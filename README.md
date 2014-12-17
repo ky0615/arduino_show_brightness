@@ -1,13 +1,27 @@
 # Showing Brightness for LCD by Arduino and Node.js
 
 ## Install
-This code is essential Node.js
+In Arduino, You have to install the `Firmata`  
+
+And then, connect the PC and Arduino.  
+You can change to the PC even RaspberryPi.
+
+This code is essential Node.js  
 You should install Node.js by nvm
 
+### initial installation
+
 ```ShellScript
-npm install
-npm start
+$ npm install
+$ npm start (or coffee app.coffee)
 ```
+
+## Wiring
+| LCD pin name | RS | E  | D4 | D5 | D6 | D7 |
+|:-------------|:--:|:--:|:--:|:--:|:--:|:--:|
+| Arduino pin  | 7  | 8  | 9  | 10 | 11 | 12 |
+
+the Brightness sensor connect the `Analog 0`
 
 ## License
 Copyright (c) 2014 Koutarou Yabe

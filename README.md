@@ -24,6 +24,6 @@ $ npm start (or coffee app.coffee)
 the Brightness sensor connect the `Analog 0`
 
 ## License
-Copyright (c) 2014 Koutarou Yabe
-Released under the MIT license
+Copyright (c) 2014 Koutarou Yabe  
+Released under the MIT license  
 http://opensource.org/licenses/mit-license.php

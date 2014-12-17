@@ -1,0 +1,17 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "growl": "^1.8.1",
+    "johnny-five": "^0.8.33",
+    "node-rest-client": "^1.4.1",
+    "request": "^2.48.0"
+  }
+}

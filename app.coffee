@@ -1,39 +1,24 @@
-growl = require "growl"
-Client = require('node-rest-client').Client
-client = new Client()
-
-
-url = "http://sensor.temp.ws/sensor"
 j5 = require "johnny-five"
 arduino = new j5.Board()
-
-g_flag = false
-
-show_notify = (text, val)->
-  console.log val
-  return
-  unless g_flag
-    data =
-      data:    {val}
-      headers: {"Content-Type": "application/json"}
-
-    try
-      client.post url, data, (body)->
-        console.log body
-    catch e
-      console.log e
-
-    g_flag = true
-    setTimeout (->g_flag = false), 1000
-
-    if val > 250
-      growl "warning: 明るすぎます"
-    if val < 170
-      growl text
-  return
+temp = 0
 
 arduino.on "ready", ->
+  lcd = new j5.LCD
+    # LCD pin name RS E D4 D5 D6 D7
+    # Arduino pin  7  8 9  10 11 12
+    pins: [7..12]
+    backlight: 10
+    row:2
+    cols:16
+  lcd.on "ready", ->
+    setInterval ->
+        temp_str = temp.toString()
+        for i in [0..3-temp_str.length]
+          temp_str += " "
+        lcd
+          .cursor(0, 0)
+          .print " Brightness: #{temp_str}"
+      , 1000
   @pinMode 0, j5.Pin.INPUT
-  console.log "start"
   @analogRead 0, (val)->
-    show_notify "warning: 暗すぎます", val
+    temp = val

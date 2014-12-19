@@ -12,6 +12,8 @@ You should install Node.js by nvm
 ### initial installation
 
 ```ShellScript
+$ cp config/default.json.example config/default.json
+$ vim config/default.json
 $ npm install
 $ npm start (or coffee app.coffee)
 ```

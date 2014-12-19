@@ -11,6 +11,7 @@
   "dependencies": {
     "coffee-script": "^1.8.0",
     "config": "^1.9.0",
-    "johnny-five": "^0.8.33"
+    "johnny-five": "^0.8.33",
+    "node-rest-client": "^1.4.3"
   }
 }
